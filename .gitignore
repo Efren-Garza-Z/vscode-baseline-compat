@@ -25,7 +25,7 @@ jspm_packages/
 *.tgz
 
 # VS Code
-.vscode/
+#.vscode/
 
 # TypeScript
 *.tsbuildinfo
