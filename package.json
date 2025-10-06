@@ -12,7 +12,11 @@
   "activationEvents": [
     "onLanguage:javascript",
     "onLanguage:typescript",
-    "onLanguage:css"
+    "onLanguage:javascriptreact",
+    "onLanguage:typescriptreact",
+    "onLanguage:css",
+    "onLanguage:scss",
+    "onLanguage:less"
   ],
   "main": "./dist/extension.js",
   "contributes": {

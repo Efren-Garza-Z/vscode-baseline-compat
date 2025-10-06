@@ -9,6 +9,12 @@ export class JsTsHoverProvider implements vscode.HoverProvider {
     position: vscode.Position,
     token: vscode.CancellationToken
   ): Promise<vscode.Hover | null> {
+
+    if (!['javascript', 'typescript', 'javascriptreact', 'typescriptreact'].includes(document.languageId)) {
+    return null;
+    }
+
+    
     const range = document.getWordRangeAtPosition(position, /[A-Za-z0-9_$]+/);
     if (!range) return null;
     const word = document.getText(range);

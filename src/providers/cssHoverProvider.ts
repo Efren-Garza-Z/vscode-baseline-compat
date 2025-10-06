@@ -9,6 +9,11 @@ export class CssHoverProvider implements vscode.HoverProvider {
     position: vscode.Position,
     token: vscode.CancellationToken
   ): Promise<vscode.Hover | null> {
+
+    if (!['css', 'scss', 'less'].includes(document.languageId)) {
+      return null;
+    }
+
     const range = document.getWordRangeAtPosition(position, /[\w-]+/);
     if (!range) return null;
     const word = document.getText(range);
